@@ -1,15 +1,15 @@
 import { render, screen } from "@testing-library/react";
-import { Details } from "./details";
+import { Favourites } from "./favourites";
 
-describe("Given Details component", () => {
+describe("Given Favourites component", () => {
   describe("When it is render", () => {
     test("Then it should have the title in the screen", () => {
       render(
         <>
-          <Details></Details>
+          <Favourites></Favourites>
         </>
       );
-      const element = screen.getByText(/Capital/i);
+      const element = screen.getByText(/Favourites/i);
       expect(element).toBeInTheDocument();
     });
   });
