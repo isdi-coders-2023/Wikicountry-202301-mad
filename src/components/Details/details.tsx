@@ -1,7 +1,6 @@
 import "./details.css";
 
 export function Details() {
-  //const logo = "./images/logo-wikicountry.png";
   return (
     <section className="details">
       <div className="details-top">
