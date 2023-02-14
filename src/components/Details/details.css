@@ -10,7 +10,7 @@
 .details-top {
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
 }

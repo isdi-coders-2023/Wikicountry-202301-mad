@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { Details } from "./details";
 
-describe("Given Header component", () => {
+describe("Given Details component", () => {
   describe("When it is render", () => {
     test("Then it should have the title in the screen", () => {
       render(
