@@ -1,9 +1,14 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
+import { Header } from "../Header/header";
 import App from "./App";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Working in progress/i);
-  expect(linkElement).toBeInTheDocument();
+jest.mock("../Header/header");
+
+describe("Given App component", () => {
+  describe("When it is render", () => {
+    test("Then it should call Header", () => {
+      render(<App />);
+      expect(Header).toHaveBeenCalled();
+    });
+  });
 });
