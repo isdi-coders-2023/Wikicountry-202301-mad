@@ -6,8 +6,7 @@ export class ApiCountryRepo {
   async loadCountries() {
     const response = await fetch(this.url + "/all");
     const data = await response.json();
-    debugger;
-    console.log(data);
+    return data;
   }
 
   async getCountryByName(country: string) {
