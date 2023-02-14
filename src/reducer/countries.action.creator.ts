@@ -1,4 +1,4 @@
-import { ProtoCountryStrucuture } from "../../../model/country";
+import { ProtoCountryStrucuture } from "../model/country";
 import { countriesActions } from "./countries.actions";
 
 interface Action {
