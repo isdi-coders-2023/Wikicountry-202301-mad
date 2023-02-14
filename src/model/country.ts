@@ -1,5 +1,6 @@
 export type ProtoCountryStrucuture = {
   capital: string[];
+  region: string;
   coatOfArms: {
     png: string;
     svg: string;
