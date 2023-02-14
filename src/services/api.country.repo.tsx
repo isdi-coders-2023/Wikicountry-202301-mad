@@ -31,7 +31,7 @@ export class ApiCountryRepo {
 
   async getCountryByRegion(
     region: ProtoCountryStrucuture["region"]
-  ): ProtoCountryStrucuture {
+  ): Promise<ProtoCountryStrucuture> {
     const response = await fetch(this.url + "/region/" + region);
     const data = await response.json();
     return data;
