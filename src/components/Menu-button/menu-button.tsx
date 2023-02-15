@@ -10,7 +10,7 @@ export function MenuButton({ options }: MenuProps) {
   return (
     <nav>
       <ul>
-        {location.pathname !== "/details" ? (
+        {location.pathname !== "/main" ? (
           <li aria-label="Option1" key={options[0].label}>
             <Link to={options[0].path}>Button1</Link>
           </li>

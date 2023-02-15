@@ -14,12 +14,12 @@ describe("Given Menu component", () => {
   describe("When it is rendered details", () => {
     const mockOptions: MenuOption[] = [
       {
-        label: "Details",
-        path: "/details",
+        label: "/main",
+        path: "/main",
       },
       {
-        label: "Test",
-        path: "/test",
+        label: "Favouites",
+        path: "/favourites",
       },
     ];
     test("Then menu should be in the screen and dont pass the condition", () => {
@@ -28,7 +28,7 @@ describe("Given Menu component", () => {
           <MenuButton options={mockOptions}></MenuButton>
         </Router>
       );
-      const element = screen.getByLabelText("Option2");
+      const element = screen.getByLabelText("Option1");
       expect(element).toBeInTheDocument();
     });
   });
