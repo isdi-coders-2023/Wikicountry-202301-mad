@@ -1,17 +1,21 @@
 import { CountryActions } from "./countries.action.creator";
 
+const state:string = "hola";
+
 describe("country reducer", () =>
-  it("should return new staction", () => {
+  it("Function countryReducer", () => {
     function countriesReducer(
-      state: number = 3,
+      state: string = 'hola',
       action: CountryActions
     ): string {
       switch (action.type) {
-        case CounytryActions:
+        case countriesActions.load:
           return state;
         default:
           return state;
       }
     }
-    expect(console.log(5));
-  }));
+    test("Should return state=hola", () => {
+      expect(console.log(`${state}= hola`));
+    });
+  }
