@@ -7,8 +7,8 @@ import { AppRouter } from "./app-router";
 
 const mockOptions: MenuOption[] = [
   {
-    label: "Details",
-    path: "/details",
+    label: "Main",
+    path: "/main",
   },
   {
     label: "Favourites",
@@ -21,16 +21,16 @@ describe("Given AppRouter component", () => {
 
   beforeEach(() => {
     render(
-      <Router initialEntries={["/details", "/favourites"]} initialIndex={count}>
+      <Router initialEntries={["/main", "/favourites"]} initialIndex={count}>
         <AppRouter menuOptions={mockOptions}></AppRouter>
       </Router>
     );
     count++;
   });
 
-  describe("When the route is details", () => {
-    test("Then it should go to /details and render it", async () => {
-      const element = await screen.findByText(/Nombre pais/i);
+  describe("When the route is main", () => {
+    test("Then it should go to /main and render it", async () => {
+      const element = await screen.findByText(/Asia/i);
       expect(element).toBeInTheDocument();
     });
   });

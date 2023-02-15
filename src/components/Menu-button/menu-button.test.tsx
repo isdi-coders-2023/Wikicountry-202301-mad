@@ -6,7 +6,7 @@ import { MenuButton } from "./menu-button";
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useLocation: () => ({
-    pathname: "/details",
+    pathname: "/main",
   }),
 }));
 
@@ -28,7 +28,7 @@ describe("Given Menu component", () => {
           <MenuButton options={mockOptions}></MenuButton>
         </Router>
       );
-      const element = screen.getByLabelText("Option1");
+      const element = screen.getByLabelText("Option2");
       expect(element).toBeInTheDocument();
     });
   });
