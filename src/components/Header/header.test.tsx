@@ -6,7 +6,9 @@ describe("Given Header component", () => {
     test("Then it should have the title in the screen", () => {
       render(
         <>
-          <Header></Header>
+          <Header>
+            <></>
+          </Header>
         </>
       );
       const element = screen.getByText(/WikiCountry/i);
