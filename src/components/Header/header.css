@@ -1,6 +1,10 @@
 .header {
   padding-top: 2rem;
+<<<<<<< HEAD
   padding-bottom: 5rem;
+=======
+  padding-bottom: 2rem;
+>>>>>>> main
   display: flex;
   flex-direction: column;
   align-items: center;
