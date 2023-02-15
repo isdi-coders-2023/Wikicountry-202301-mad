@@ -5,9 +5,9 @@ describe("Given Footer component", () => {
   describe("When it is render", () => {
     test("Then it should have the footer in the screen", () => {
       render(
-        <Footer>
-          <></>
-        </Footer>
+        <>
+          <Footer></Footer>
+        </>
       );
       const element = screen.getByText(/Country/i);
       expect(element).toBeInTheDocument();
