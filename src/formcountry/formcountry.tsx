@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState } from "react";
 import { ProtoCountryStrucuture } from "../model/country";
 
-export function Contact2() {
+export function FormCountry() {
   const initialUserData: ProtoCountryStrucuture = {
     countryName: "",
     capital: "",
@@ -32,7 +32,6 @@ export function Contact2() {
 
   return (
     <>
-      <h2>Formulario controlado</h2>
       <form action="" onSubmit={handleSubmit}>
         <div className="formControl">
           <label htmlFor="population">Population</label>
@@ -48,10 +47,10 @@ export function Contact2() {
         <div className="formControl">
           <label htmlFor="countryname">Nombre del país</label>
           <input
-            type="countryname"
-            id="countryname"
-            name="countryname"
-            value={userData.name}
+            type="name"
+            id="name"
+            name="name"
+            value={userData.name.official}
             onChange={handleChange}
             required
           />
@@ -60,7 +59,7 @@ export function Contact2() {
           <select
             name="category"
             id=""
-            value={userData.languages}
+            value={userData.languages.key}
             onChange={handleChange}
             required
           >
