@@ -1,3 +1,2 @@
-export function WorldContextProvider() {
-  console.log("testing");
-}
+import { createContext } from "react";
+export const worldContext = createContext({} as ProtoCountryStrucuture);
