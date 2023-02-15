@@ -11,11 +11,11 @@ export function MenuButton({ options }: MenuProps) {
     <nav>
       <ul>
         {location.pathname !== "/details" ? (
-          <li key={options[0].label}>
+          <li aria-label="Option1" key={options[0].label}>
             <Link to={options[0].path}>Button1</Link>
           </li>
         ) : (
-          <li key={options[1].label}>
+          <li aria-label="Option2" key={options[1].label}>
             <Link to={options[1].path}>Button</Link>
           </li>
         )}
