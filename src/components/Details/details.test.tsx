@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Details } from "./details";
+import Details from "./details";
 
 describe("Given Details component", () => {
   describe("When it is render", () => {
