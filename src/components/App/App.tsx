@@ -1,0 +1,18 @@
+import React from "react";
+import { Details } from "../Details/details";
+import { Favourites } from "../Favourites/favourites";
+import { FormCountry } from "../formcountry/formcountry";
+import { Header } from "../Header/header";
+import "./App.css";
+
+function App() {
+  return (
+    <>
+      <Header></Header>
+      <Favourites></Favourites>
+      <Details></Details>
+      <FormCountry></FormCountry>
+    </>
+  );
+}
+export default App;

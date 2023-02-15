@@ -1,5 +1,5 @@
 import { SyntheticEvent, useState } from "react";
-import { ProtoCountryStrucuture } from "../model/country";
+import { ProtoCountryStrucuture } from "../../model/country";
 
 export function FormCountry() {
   const initialUserData: ProtoCountryStrucuture = {
