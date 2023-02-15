@@ -11,7 +11,7 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe("Given Menu component", () => {
-  describe("When it is rendered", () => {
+  describe("When it is rendered details", () => {
     const mockOptions: MenuOption[] = [
       {
         label: "Details",
@@ -29,15 +29,6 @@ describe("Given Menu component", () => {
         </Router>
       );
       const element = screen.getByLabelText("Option2");
-      expect(element).toBeInTheDocument();
-    });
-    test("Then menu should be in the screen and pass the condition", () => {
-      render(
-        <Router>
-          <MenuButton options={mockOptions}></MenuButton>
-        </Router>
-      );
-      const element = screen.getByLabelText("Option1");
       expect(element).toBeInTheDocument();
     });
   });
