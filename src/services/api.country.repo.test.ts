@@ -1,4 +1,3 @@
-import { ProtoCountryStrucuture } from "../model/country";
 import { ApiCountryRepo } from "./api.country.repo";
 
 describe("Given a class to build api methods", () => {
