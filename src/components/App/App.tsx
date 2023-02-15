@@ -1,6 +1,5 @@
 import React from "react";
 import { AppRouter } from "../App-router/app-router";
-import { Favourites } from "../Favourites/favourites";
 import { Header } from "../Header/header";
 import { MenuButton } from "../Menu-button/menu-button";
 import "./App.css";
