@@ -1,2 +1,2 @@
 import { createContext } from "react";
-export const worldContext = createContext({} as ProtoCountryStrucuture);
+export const worldContext = createContext({} as any);
