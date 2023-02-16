@@ -6,7 +6,7 @@ import { MenuButton } from "./menu-button";
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useLocation: () => ({
-    pathname: "/details",
+    pathname: "/main",
   }),
 }));
 
@@ -14,12 +14,12 @@ describe("Given Menu component", () => {
   describe("When it is rendered details", () => {
     const mockOptions: MenuOption[] = [
       {
-        label: "Details",
-        path: "/details",
+        label: "/main",
+        path: "/main",
       },
       {
-        label: "Test",
-        path: "/test",
+        label: "Favouites",
+        path: "/favourites",
       },
     ];
     test("Then menu should be in the screen and dont pass the condition", () => {
