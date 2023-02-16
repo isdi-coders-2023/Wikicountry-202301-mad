@@ -1,4 +1,4 @@
-import { ApiCountryRepo, ResponseName } from "../services/api.country.repo";
+import { ApiCountryRepo } from "../services/api.country.repo";
 import { useCallback, useState } from "react";
 import { ProtoCountryStrucuture } from "../model/country";
 export type UseWorldStructure = ReturnType<typeof useWorld>;
@@ -20,7 +20,7 @@ export function useWorld(repo: ApiCountryRepo) {
     }
   }, [repo]);
 
-  const getCountryByName = async (name: ResponseName) => {
+  const getCountryByName = async (name: ProtoCountryStrucuture["name"]) => {
     try {
       const countryByName = await repo.getCountryByName(name);
       setCountries([...countries, countryByName]);
