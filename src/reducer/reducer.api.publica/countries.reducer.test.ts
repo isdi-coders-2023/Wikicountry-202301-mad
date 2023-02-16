@@ -1,8 +1,7 @@
 import { ProtoCountryStrucuture } from "../components/model/country";
 import { CountryActions, loadCountryCreator } from "./countries.action.creator";
-
+import { countriesActions } from "./countries.actions";
 import { countriesReducer } from "./countries.reducer";
-import { countriesActions } from "./reducer.api.publica/countries.actions";
 
 const countryMock: ProtoCountryStrucuture = {
   capital: ["Madrid"],

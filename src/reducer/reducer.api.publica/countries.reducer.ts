@@ -1,6 +1,6 @@
 import { ProtoCountryStrucuture } from "../components/model/country";
 import { CountryActions } from "./countries.action.creator";
-import { countriesActions } from "./reducer.api.publica/countries.actions";
+import { countriesActions } from "./countries.actions";
 
 // Una función pura
 // - no modifica ni depende de nada externo

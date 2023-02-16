@@ -1,5 +1,5 @@
 import { ProtoCountryStrucuture } from "../components/model/country";
-import { countriesActions } from "./reducer.api.publica/countries.actions";
+import { countriesActions } from "./countries.actions";
 
 interface Action {
   type: string;
