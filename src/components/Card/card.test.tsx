@@ -1,6 +1,6 @@
 /* eslint-disable testing-library/no-render-in-setup */
 import { render, screen } from "@testing-library/react";
-import { ProtoCountryStrucuture } from "../../model/country";
+import { ProtoCountryStrucuture } from "../model/country";
 import { Card } from "./card";
 
 const mockCountry: ProtoCountryStrucuture = {
