@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { MenuOption } from "../App/App";
 
@@ -10,13 +11,13 @@ export function MenuButton({ options }: MenuProps) {
   return (
     <nav>
       <ul>
-        {location.pathname !== "/main" ? (
-          <li aria-label="Option1" key={options[0].label}>
-            <Link to={options[0].path}>Button1</Link>
+        {location.pathname === ("/main" || "/") ? (
+          <li aria-label="Option1" key={options[1].label}>
+            <Link to={options[1].path}>Ir a fav</Link>
           </li>
         ) : (
-          <li aria-label="Option2" key={options[1].label}>
-            <Link to={options[1].path}>Button</Link>
+          <li aria-label="Option2" key={options[0].label}>
+            <Link to={options[0].path}>Ir a home</Link>
           </li>
         )}
       </ul>

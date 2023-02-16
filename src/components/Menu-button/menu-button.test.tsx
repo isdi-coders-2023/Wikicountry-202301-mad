@@ -28,7 +28,7 @@ describe("Given Menu component", () => {
           <MenuButton options={mockOptions}></MenuButton>
         </Router>
       );
-      const element = screen.getByLabelText("Option2");
+      const element = screen.getByLabelText("Option1");
       expect(element).toBeInTheDocument();
     });
   });
