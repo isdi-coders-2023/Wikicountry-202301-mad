@@ -6,8 +6,8 @@ export function Cards() {
   return (
     <section className="cards">
       <ul className="cards__ul">
-        {MOCK_COUNTRIES.map((item) => (
-          <Card country={item}></Card>
+        {MOCK_COUNTRIES.map((item, idx) => (
+          <Card key={idx} country={item}></Card>
         ))}
       </ul>
     </section>
