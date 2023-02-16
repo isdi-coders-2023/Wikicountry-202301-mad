@@ -1,26 +1,62 @@
 import { count } from "console";
 import { useReducer } from "react";
 import { ProtoCountryStrucuture } from "../components/model/country";
-import { CountryActions } from "./countries.action.creator";
+import { CountryActions, loadCountryCreator } from "./countries.action.creator";
 import { countriesActions } from "./countries.actions";
 import { countriesReducer } from "./countries.reducer";
 
+const countryMock: ProtoCountryStrucuture = {
+  capital: ["Madrid"],
+  region: "i",
+  coatOfArms: {
+    png: "f",
+    svg: "f",
+  },
+  currencies: {
+    USD: {
+      name: "dolar",
+    },
+  },
+  flags: {
+    alt: "flag.img",
+    png: "flag.img",
+    svg: "flag.img",
+  },
+  languages: {
+    ["english"]: "jhk",
+  },
+  maps: {
+    googleMaps: "flag.img",
+  },
+  name: {
+    common: "flag.img",
+    official: "flag.img",
+  },
+  population: 2,
+};
+
 describe("Given the reducer function", () => {
   describe("When the state parameter go into the function", () => {
-    test("Then it should return the same state parameter", () => {
-      const initialState: ProtoCountryStrucuture[] = [];
+    test("Then it should return  an empty []", () => {
+      const state: ProtoCountryStrucuture[] = [];
       const action: CountryActions =
         countriesActions.load as unknown as CountryActions;
-      countriesReducer(initialState, action);
-      expect(initialState).toEqual([]);
+      countriesReducer(state, action);
+      expect(state).toEqual([]);
+    });
+    test("Then it should return  an empty []", () => {
+      const state: ProtoCountryStrucuture[] = [];
+      const action: CountryActions =
+        countriesActions.load as unknown as CountryActions;
+      countriesReducer(state, action);
+      expect(state).toEqual([]);
     });
 
-    test("Then it should return the parameter", () => {
+    test("Then it should return  an empty []", () => {
       const initialState: ProtoCountryStrucuture[] = [];
-      const action: CountryActions =
-        countriesActions.load as unknown as CountryActions;
-      countriesReducer(initialState, action.type.load);
-      expect(initialState).toEqual([]);
+      const action = loadCountryCreator([countryMock]);
+      const newState = countriesReducer(initialState, action);
+      expect(newState).toEqual([countryMock]);
     });
   });
 });
