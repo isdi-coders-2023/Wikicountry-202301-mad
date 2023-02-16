@@ -1,5 +1,3 @@
-import { count } from "console";
-import { useReducer } from "react";
 import { ProtoCountryStrucuture } from "../components/model/country";
 import { CountryActions, loadCountryCreator } from "./countries.action.creator";
 import { countriesActions } from "./countries.actions";
@@ -23,7 +21,7 @@ const countryMock: ProtoCountryStrucuture = {
     svg: "flag.img",
   },
   languages: {
-    ["english"]: "jhk",
+    english: "jhk",
   },
   maps: {
     googleMaps: "flag.img",
