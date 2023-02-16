@@ -10,10 +10,6 @@ export interface CountryApiRepoStructure {
   ): Promise<ProtoCountryStrucuture>;
 }
 
-export type ResponseName = {
-  name: string;
-};
-
 export class ApiCountryRepo {
   url: string;
   constructor() {
@@ -25,7 +21,9 @@ export class ApiCountryRepo {
     return data;
   }
 
-  async getCountryByName(name: ResponseName): Promise<ProtoCountryStrucuture> {
+  async getCountryByName(
+    name: ProtoCountryStrucuture["name"]
+  ): Promise<ProtoCountryStrucuture> {
     const response = await fetch(this.url + "/name/" + name);
     const data = await response.json();
     return data;
