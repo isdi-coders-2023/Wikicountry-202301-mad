@@ -13,6 +13,6 @@
 .country-card__name {
   margin-top: 0.2rem;
   padding: 0.2rem;
-
+  width: 8rem;
   border-radius: 0.2rem;
 }
