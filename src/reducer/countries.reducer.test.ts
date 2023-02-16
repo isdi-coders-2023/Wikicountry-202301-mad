@@ -1,30 +1,26 @@
-// import { useReducer } from "react";
-// import { ProtoCountryStrucuture } from "../model/country";
-// import { CountryActions } from "./countries.action.creator";
-// import { countriesActions } from "./countries.actions";
-// import { countriesReducer } from "./countries.reducer";
-
-// const state: string = "hola";
-// const initialState: ProtoCountryStrucuture[] = [];
-// describe("country reducer", () => {
-//   const [st, dispatch] = useReducer(countriesReducer, initialState);
-
-//   it("shows state", () => {
-//     expect(st).toEqual([]);
-//   });
-// });
-
-import { countriesReducer } from "./countries.reducer";
-import { ProtoCountryStrucuture } from "../model/country";
+import { count } from "console";
+import { useReducer } from "react";
+import { ProtoCountryStrucuture } from "../components/model/country";
 import { CountryActions } from "./countries.action.creator";
+import { countriesActions } from "./countries.actions";
+import { countriesReducer } from "./countries.reducer";
 
+describe("Given the reducer function", () => {
+  describe("When the state parameter go into the function", () => {
+    test("Then it should return the same state parameter", () => {
+      const initialState: ProtoCountryStrucuture[] = [];
+      const action: CountryActions =
+        countriesActions.load as unknown as CountryActions;
+      countriesReducer(initialState, action);
+      expect(initialState).toEqual([]);
+    });
 
-describe('countryreducer', () =>{
-  test('returns new state', () =>{
-    const state : ProtoCountryStrucuture[] = [];
-    const action : CountryActions;
-
-    {
-
-  })
-})
+    test("Then it should return the parameter", () => {
+      const initialState: ProtoCountryStrucuture[] = [];
+      const action: CountryActions =
+        countriesActions.load as unknown as CountryActions;
+      countriesReducer(initialState, action.type.load);
+      expect(initialState).toEqual([]);
+    });
+  });
+});
