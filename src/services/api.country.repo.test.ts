@@ -17,14 +17,17 @@ describe("Given a class to build api methods", () => {
     test("Then getCountryByName should return a country", async () => {
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue({
-          name: "pepe",
+          common: "",
+          official: "",
         }),
       });
       const r = await repo.getCountryByName({
-        name: "pepe",
+        common: "",
+        official: "",
       });
       expect(r).toEqual({
-        name: "pepe",
+        common: "",
+        official: "",
       });
     });
     test("Then getCountryByRegion should return a country", async () => {
