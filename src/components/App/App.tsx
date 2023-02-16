@@ -2,6 +2,8 @@ import React from "react";
 
 import { AppRouter } from "../App-router/app-router";
 
+import { Footer } from "../footer/footer";
+
 import { Header } from "../Header/header";
 import { MenuButton } from "../Menu-button/menu-button";
 import "./App.css";
@@ -22,9 +24,10 @@ function App() {
       <Header>
         <MenuButton options={menuOptions}></MenuButton>
       </Header>
-      <main>
-        <AppRouter menuOptions={menuOptions}></AppRouter>
-      </main>
+
+      <AppRouter menuOptions={menuOptions}></AppRouter>
+      <Footer></Footer>
+
     </>
   );
 }
