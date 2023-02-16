@@ -1,6 +1,6 @@
 import "./details.css";
 
-export function Details() {
+function Details() {
   return (
     <section className="details">
       <div className="details-top">
@@ -41,3 +41,4 @@ export function Details() {
     </section>
   );
 }
+export default Details;
