@@ -1,3 +1,4 @@
+import "./cards.css";
 import { MOCK_COUNTRIES } from "../../mocks/country-data";
 import { Card } from "../Card/card";
 
