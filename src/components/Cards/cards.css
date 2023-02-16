@@ -1,0 +1,13 @@
+.cards {
+  padding: 0;
+  padding-top: 2rem;
+}
+
+.cards__ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  padding: 0;
+  justify-items: center;
+  row-gap: 2rem;
+}
