@@ -9,8 +9,9 @@ export type MenuOption = {
   path: string;
 };
 const menuOptions: MenuOption[] = [
-  { label: "Details", path: "/details" },
+  { label: "Main", path: "/main" },
   { label: "Favourites", path: "/favourites" },
+  { label: "Details", path: "/details" },
 ];
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
       <Header>
         <MenuButton options={menuOptions}></MenuButton>
       </Header>
-      <AppRouter menuOptions={menuOptions}></AppRouter>
+      <main>
+        <AppRouter menuOptions={menuOptions}></AppRouter>
+      </main>
     </>
   );
 }
