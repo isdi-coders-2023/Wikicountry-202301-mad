@@ -1,6 +1,6 @@
 import { ApiCountryRepo } from "../services/api.country.repo";
 import { useCallback, useState } from "react";
-import { ProtoCountryStrucuture } from "../model/country";
+import { ProtoCountryStrucuture } from "../components/model/country";
 export type UseWorldStructure = ReturnType<typeof useWorld>;
 export function useWorld(repo: ApiCountryRepo) {
   const initialState: ProtoCountryStrucuture[] = [];
