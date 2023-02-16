@@ -50,7 +50,7 @@ describe("Given the reducer function", () => {
       expect(state).toEqual([]);
     });
 
-    test("Then it should return  an empty []", () => {
+    test("Then it should return mockcountry[]", () => {
       const initialState: ProtoCountryStrucuture[] = [];
       const action = loadCountryCreator([countryMock]);
       const newState = countriesReducer(initialState, action);
