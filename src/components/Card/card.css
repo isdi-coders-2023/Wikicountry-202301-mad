@@ -1,6 +1,5 @@
 .country-card {
   margin: 0;
-  align-items: center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
