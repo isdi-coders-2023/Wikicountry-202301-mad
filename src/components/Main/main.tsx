@@ -1,3 +1,4 @@
+import { Cards } from "../Cards/cards";
 import "./main.css";
 
 export function Main() {
@@ -22,6 +23,7 @@ export function Main() {
           <option value="Oceania">Oceania</option>
         </select>
       </div>
+      <Cards></Cards>
     </section>
   );
 }
