@@ -1,5 +1,7 @@
 import React from "react";
+
 import { AppRouter } from "../App-router/app-router";
+
 import { Header } from "../Header/header";
 import { MenuButton } from "../Menu-button/menu-button";
 import "./App.css";
@@ -26,4 +28,5 @@ function App() {
     </>
   );
 }
+
 export default App;
