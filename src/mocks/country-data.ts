@@ -1,4 +1,4 @@
-import { ProtoCountryStrucuture } from "../model/country";
+import { ProtoCountryStrucuture } from "../components/model/country";
 
 export const MOCK_COUNTRIES: ProtoCountryStrucuture[] = [
   {

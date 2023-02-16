@@ -1,5 +1,5 @@
 import "./card.css";
-import { ProtoCountryStrucuture } from "../../model/country";
+import { ProtoCountryStrucuture } from "../model/country";
 
 type CountryProps = {
   country: ProtoCountryStrucuture;
