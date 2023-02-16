@@ -1,17 +1,19 @@
 export type ProtoCountryStrucuture = {
   capital: string[];
   region: string;
-  coatOfArms: {
-    png: string;
-    svg: string;
-  };
+  coatOfArms:
+    | {
+        png: string;
+        svg: string;
+      }
+    | {};
   currencies: {
     [key: string]: {
       name: string;
     };
   };
   flags: {
-    alt: string;
+    alt?: string;
     png: string;
     svg: string;
   };
