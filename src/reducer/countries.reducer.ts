@@ -10,7 +10,7 @@ import { countriesActions } from "./countries.actions";
 // devuelve un nuevo estado
 
 export type countryState = {
-  countries?: ProtoCountryStrucuture[];
+  countries: ProtoCountryStrucuture[];
   country?: ProtoCountryStrucuture;
 };
 
