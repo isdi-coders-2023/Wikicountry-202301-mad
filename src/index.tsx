@@ -5,7 +5,6 @@ import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter as Router } from "react-router-dom";
-import { WorldContext } from "./context/app.context";
 import { WorldContextProvider } from "./context/app.context.provider";
 
 const root = ReactDOM.createRoot(
