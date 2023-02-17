@@ -11,7 +11,7 @@ export function Cards() {
 
   useEffect(() => {
     loadCountries();
-  }, []);
+  }, [loadCountries]);
 
   return (
     <section className="cards">

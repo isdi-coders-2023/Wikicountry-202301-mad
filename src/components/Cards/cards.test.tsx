@@ -1,7 +1,5 @@
 /* eslint-disable testing-library/no-unnecessary-act */
 import { render, act } from "@testing-library/react";
-import { WorldContext } from "../../context/app.context";
-import { countryState } from "../../reducer/countries.reducer";
 import { Card } from "../Card/card";
 import { ProtoCountryStrucuture } from "../model/country";
 import { Cards } from "./cards";
