@@ -4,7 +4,6 @@ type HeaderProps = { children: JSX.Element };
 
 export function Header({ children }: HeaderProps) {
   const logo = "./images/logo-wikicountry.png";
-  const fav = "./images/img-fav.png";
 
   return (
     <header className="header">
