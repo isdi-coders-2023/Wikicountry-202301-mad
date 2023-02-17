@@ -1,11 +1,14 @@
 import { ApiCountryRepo } from "../services/api.country.repo";
-import { useCallback, useState } from "react";
+import { useCallback, useReducer, useState } from "react";
 import { ProtoCountryStrucuture } from "../components/model/country";
+import { countriesReducer } from "../reducer/countries.reducer";
+import * as ac from "../reducer/countries.action.creator";
+
 export type UseWorldStructure = ReturnType<typeof useWorld>;
 export function useWorld(repo: ApiCountryRepo) {
   const initialState: ProtoCountryStrucuture[] = [];
 
-  const [countries, setCountries] = useState(initialState);
+  const [countries, dispatch] = useReducer(countriesReducer, initialState);
 
   const handleError = (error: Error) => {
     console.log(error.message);
@@ -14,7 +17,7 @@ export function useWorld(repo: ApiCountryRepo) {
   const loadCountries = useCallback(async () => {
     try {
       const countries = await repo.loadCountries();
-      setCountries(countries);
+      dispatch(ac.loadCountryCreator(countries));
     } catch (error) {
       handleError(error as Error);
     }
@@ -23,7 +26,7 @@ export function useWorld(repo: ApiCountryRepo) {
   const getCountryByName = async (name: ProtoCountryStrucuture["name"]) => {
     try {
       const countryByName = await repo.getCountryByName(name);
-      setCountries([...countries, countryByName]);
+      dispatch(ac.getCountryByNameCreator(countryByName));
     } catch (error) {
       handleError(error as Error);
     }
@@ -34,7 +37,7 @@ export function useWorld(repo: ApiCountryRepo) {
   ) => {
     try {
       const countryByRegion = await repo.getCountryByRegion(region);
-      setCountries([...countries, countryByRegion]);
+      dispatch(ac.getCountryByRegionCreator(countryByRegion));
     } catch (error) {
       handleError(error as Error);
     }
