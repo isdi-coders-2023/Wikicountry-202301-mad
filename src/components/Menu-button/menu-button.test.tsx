@@ -11,7 +11,7 @@ describe("Given Menu component", () => {
       </Router>
     );
     test("Then menu should be in the screen and dont pass the condition", () => {
-      const element = screen.getByText(/home/i);
+      const element = screen.getByAltText(/home/i);
       expect(element).toBeInTheDocument();
     });
   });
