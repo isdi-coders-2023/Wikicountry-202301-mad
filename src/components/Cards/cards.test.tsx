@@ -4,8 +4,6 @@
 import { act, render, screen } from "@testing-library/react";
 import { WorldContext } from "../../context/app.context";
 import { UseWorldStructure } from "../../hook/use.world";
-import { Card } from "../Card/card";
-import { ProtoCountryStrucuture } from "../model/country";
 import { Cards } from "./cards";
 
 jest.mock("../Card/card");

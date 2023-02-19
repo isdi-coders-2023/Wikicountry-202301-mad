@@ -1,4 +1,3 @@
-import { ProtoCountryStrucuture } from "../components/model/country";
 import { CountryActions } from "./countries.action.creator";
 import { countriesActions } from "./countries.actions";
 import { countriesReducer, countryState } from "./countries.reducer";

@@ -15,7 +15,7 @@ export function Cards() {
     <section className="cards">
       <ul className="cards__ul">
         {stateCountries?.countries.map((item: ProtoCountryStrucuture) => (
-          <Card country={item}></Card>
+          <Card key={item.population} country={item}></Card>
         ))}
       </ul>
     </section>

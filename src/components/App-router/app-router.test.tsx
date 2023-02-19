@@ -3,9 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
 import { WorldContext } from "../../context/app.context";
 import { UseWorldStructure } from "../../hook/use.world";
-import { countryState } from "../../reducer/countries.reducer";
 import { MenuOption } from "../App/App";
-import Main from "../Main/main";
 import { AppRouter } from "./app-router";
 
 describe("Given AppRouter component", () => {
