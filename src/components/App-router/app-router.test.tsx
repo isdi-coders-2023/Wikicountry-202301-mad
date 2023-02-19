@@ -32,6 +32,7 @@ describe("Given AppRouter component", () => {
       </WorldContext.Provider>
     );
   };
+
   describe("When the route is main", () => {
     test("Then it should go to main path and render it", async () => {
       await waitFor(async () => prepareTestFunction(0));
