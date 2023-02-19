@@ -1,16 +1,15 @@
-import { render, screen } from "@testing-library/react";
+/* eslint-disable testing-library/no-unnecessary-act */
+import { render } from "@testing-library/react";
+import { Cards } from "../Cards/cards";
 import Main from "./main";
 
+jest.mock("../Cards/cards");
+
 describe("Given Main component", () => {
-  describe("When it is render", () => {
-    test("Then it should appear in the document", () => {
-      render(
-        <>
-          <Main></Main>
-        </>
-      );
-      const element = screen.getByText("Asia");
-      expect(element).toBeInTheDocument();
+  describe("When it renders", () => {
+    test("Then it should renders Cards", () => {
+      render(<Main></Main>);
+      expect(Cards).toHaveBeenCalled();
     });
   });
 });

@@ -1,5 +1,7 @@
 /* eslint-disable testing-library/no-render-in-setup */
 import { render, screen } from "@testing-library/react";
+import { WorldContext } from "../../context/app.context";
+import { UseWorldStructure } from "../../hook/use.world";
 import { ProtoCountryStrucuture } from "../model/country";
 import { Card } from "./card";
 
@@ -33,14 +35,20 @@ const mockCountry: ProtoCountryStrucuture = {
   population: 2,
 } as unknown as ProtoCountryStrucuture;
 
+const mockContext = {
+  loadCountries: jest.fn(),
+} as unknown as UseWorldStructure;
+
 describe("Given Card component", () => {
   describe("When it is render", () => {
     let elements: HTMLElement[];
     beforeEach(() => {
       render(
-        <ul>
-          <Card country={mockCountry}></Card>
-        </ul>
+        <WorldContext.Provider value={mockContext}>
+          <ul>
+            <Card country={mockCountry}></Card>
+          </ul>
+        </WorldContext.Provider>
       );
       elements = [screen.getByRole("img")];
     });

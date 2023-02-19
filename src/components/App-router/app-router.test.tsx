@@ -36,7 +36,7 @@ describe("Given AppRouter component", () => {
   describe("When the route is main", () => {
     test("Then it should go to main path and render it", async () => {
       await waitFor(async () => prepareTestFunction(0));
-      const element = await screen.findByRole("form");
+      const element = await screen.findByRole("option");
       expect(element).toBeInTheDocument();
     });
   });
