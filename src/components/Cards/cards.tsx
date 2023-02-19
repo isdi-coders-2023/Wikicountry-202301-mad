@@ -17,6 +17,13 @@ export function Cards() {
     setFirstNum(firstNum + num);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     loadCountries();
   }, [loadCountries]);
@@ -36,6 +43,7 @@ export function Cards() {
           disabled={firstNum === 0 ? true : false}
           onClick={() => {
             handlerPrevNextButton(-10);
+            scrollToTop();
           }}
         >
           <img src={buttonPrev} alt="Previous page" />
