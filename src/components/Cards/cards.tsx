@@ -25,7 +25,6 @@ export function Cards() {
 
   useEffect(() => {
     loadCountries();
-    console.log(stateCountries.countries);
   }, [loadCountries]);
 
   return (
