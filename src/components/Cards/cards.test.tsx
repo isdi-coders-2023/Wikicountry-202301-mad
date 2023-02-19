@@ -2,7 +2,6 @@
 /* eslint-disable testing-library/no-unnecessary-act */
 /* eslint-disable testing-library/no-render-in-setup */
 import { act, fireEvent, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { WorldContext } from "../../context/app.context";
 import { UseWorldStructure } from "../../hook/use.world";
 import { Cards } from "./cards";
