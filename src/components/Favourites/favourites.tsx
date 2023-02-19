@@ -11,3 +11,4 @@ export function Favourites() {
     </section>
   );
 }
+export default Favourites;

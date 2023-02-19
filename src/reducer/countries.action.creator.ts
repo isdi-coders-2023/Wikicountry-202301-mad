@@ -1,4 +1,4 @@
-import { ProtoCountryStrucuture } from "../model/country";
+import { ProtoCountryStrucuture } from "../components/model/country";
 import { countriesActions } from "./countries.actions";
 
 interface Action {
@@ -15,6 +15,24 @@ export const loadCountryCreator = (
 ): CountryActions => {
   return {
     type: countriesActions.load,
+    payload,
+  };
+};
+
+export const getCountryByNameCreator = (
+  payload: ProtoCountryStrucuture
+): CountryActions => {
+  return {
+    type: countriesActions.getByName,
+    payload,
+  };
+};
+
+export const getCountryByRegionCreator = (
+  payload: ProtoCountryStrucuture[]
+): CountryActions => {
+  return {
+    type: countriesActions.getByRegion,
     payload,
   };
 };

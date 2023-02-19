@@ -1,15 +1,15 @@
 import { render, screen } from "@testing-library/react";
-import { Header } from "./header";
+import { Error } from "./error";
 
 describe("Given Header component", () => {
   describe("When it is render", () => {
-    test("Then it should have the title in the screen", () => {
+    test("Then it should have the page in the screen", () => {
       render(
-        <Header>
-          <></>
-        </Header>
+        <>
+          <Error></Error>
+        </>
       );
-      const element = screen.getByText(/WikiCountry/i);
+      const element = screen.getByText(/solicitada no/i);
       expect(element).toBeInTheDocument();
     });
   });
