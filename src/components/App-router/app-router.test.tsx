@@ -1,44 +1,52 @@
 /* eslint-disable testing-library/no-render-in-setup */
-import { render, screen } from "@testing-library/react";
-
+import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
+import { WorldContext } from "../../context/app.context";
+import { UseWorldStructure } from "../../hook/use.world";
 import { MenuOption } from "../App/App";
 import { AppRouter } from "./app-router";
 
-const mockOptions: MenuOption[] = [
-  {
-    label: "Details",
-    path: "/details",
-  },
-  {
-    label: "Favourites",
-    path: "/favourites",
-  },
-];
-
 describe("Given AppRouter component", () => {
-  let count = 0;
+  jest.mock("../Main/main");
 
-  beforeEach(() => {
+  const mockOptions: MenuOption[] = [
+    {
+      label: "Main",
+      path: "/main",
+    },
+    {
+      label: "Favourites",
+      path: "/favourites",
+    },
+  ];
+
+  const mockContext = {
+    loadCountries: jest.fn(),
+    countryList: [{ name: "test" }],
+  } as unknown as UseWorldStructure;
+  const prepareTestFunction = (num: number) => {
     render(
-      <Router initialEntries={["/details", "/favourites"]} initialIndex={count}>
-        <AppRouter menuOptions={mockOptions}></AppRouter>
-      </Router>
+      <WorldContext.Provider value={mockContext}>
+        <Router initialEntries={["/main", "/favourites"]} initialIndex={num}>
+          <AppRouter menuOptions={mockOptions}></AppRouter>
+        </Router>
+      </WorldContext.Provider>
     );
-    count++;
-  });
+  };
 
-  describe("When the route is details", () => {
-    test("Then it should go to /details and render it", async () => {
-      const element = await screen.findByText(/Nombre pais/i);
-      expect(element).toBeInTheDocument();
-    });
-  });
   describe("When the route is favourites", () => {
     test("Then it should go to /favourites and render it", async () => {
+      await waitFor(async () => prepareTestFunction(1));
       const element = await screen.findByRole("heading", {
         name: "Favourites",
       });
+      expect(element).toBeInTheDocument();
+    });
+  });
+  describe("When the route is main", () => {
+    test("Then it should go to /main and render it", async () => {
+      await waitFor(async () => prepareTestFunction(0));
+      const element = await screen.findByRole("generic");
       expect(element).toBeInTheDocument();
     });
   });

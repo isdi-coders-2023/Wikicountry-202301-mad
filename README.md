@@ -1,4 +1,7 @@
 # WikycountrY
 
 Web de consulta de países e información relativa a ellos.
-Cambio para sonar.
+
+## Settings
+
+- Dropdown and search to look for the countries

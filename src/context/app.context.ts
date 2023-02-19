@@ -1,2 +1,3 @@
 import { createContext } from "react";
-export const worldContext = createContext({} as any);
+import { UseWorldStructure } from "../hook/use.world";
+export const WorldContext = createContext({} as UseWorldStructure);
