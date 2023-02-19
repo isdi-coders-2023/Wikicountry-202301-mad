@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { MenuOption } from "../App/App";
+import { Error } from "../Error/error";
 
 const Favourites = lazy(() => import("../Favourites/favourites"));
 const Main = lazy(() => import("../Main/main"));
@@ -19,6 +20,7 @@ export function AppRouter({ menuOptions }: AppRouterProps) {
           path={menuOptions[1].path}
           element={<Favourites></Favourites>}
         ></Route>
+        <Route path={"*"} element={<Error></Error>}></Route>
       </Routes>
     </Suspense>
   );
