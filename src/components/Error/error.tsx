@@ -1,8 +1,6 @@
 import "./error.css";
 
-type ErrorProps = { children: JSX.Element };
-
-export function Error({ children }: ErrorProps) {
+export function Error() {
   const logo = "./images/error.png";
   return (
     <section className="error">
@@ -16,7 +14,6 @@ export function Error({ children }: ErrorProps) {
         La URL solicitada no se encontró en el servidor....y hasta aquí puedo
         escribir.
       </p>
-      {children}
     </section>
   );
 }
