@@ -1,13 +1,11 @@
 import "./menu-button.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MenuOption } from "../App/App";
 
 type MenuProps = {
   options: MenuOption[];
 };
 export function MenuButton({ options }: MenuProps) {
-  const location = useLocation();
-  console.log(location.pathname);
   const home = "./images/img-home.png";
   const fav = "./images/img-fav.png";
 

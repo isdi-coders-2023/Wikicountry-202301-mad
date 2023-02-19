@@ -1,20 +1,26 @@
 import "./cards.css";
 import { Card } from "../Card/card";
 import { WorldContext } from "../../context/app.context";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { ProtoCountryStrucuture } from "../model/country";
 
 export function Cards() {
   const buttonPrev = "./images/button-prev.png";
   const buttonNext = "./images/button-next.png";
 
-  const { stateCountries, loadCountries } = useContext(WorldContext);
-  const [firstNum, setFirstNum] = useState(0);
-  const [secondNum, setSecondNum] = useState(10);
+  const {
+    stateCountries,
+    loadCountries,
+    handlerPrevNextButton,
+    firstNum,
+    secondNum,
+  } = useContext(WorldContext);
 
-  const handlerPrevNextButton = (num: number) => {
-    setSecondNum(secondNum + num);
-    setFirstNum(firstNum + num);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {
@@ -36,15 +42,17 @@ export function Cards() {
           disabled={firstNum === 0 ? true : false}
           onClick={() => {
             handlerPrevNextButton(-10);
+            scrollToTop();
           }}
         >
           <img src={buttonPrev} alt="Previous page" />
         </button>
         <button
           className="cards-nav__button"
-          disabled={secondNum === 250 ? true : false}
+          disabled={secondNum >= stateCountries.countries.length ? true : false}
           onClick={() => {
             handlerPrevNextButton(10);
+            scrollToTop();
           }}
         >
           <img src={buttonNext} alt="Next Page" />
