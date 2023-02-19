@@ -27,7 +27,6 @@ function App() {
 
       <AppRouter menuOptions={menuOptions}></AppRouter>
       <Footer></Footer>
-
     </>
   );
 }

@@ -9,13 +9,25 @@ import { countriesActions } from "./countries.actions";
 // recibe un estado + una acción
 // devuelve un nuevo estado
 
+export type countryState = {
+  countries: ProtoCountryStrucuture[];
+  country: ProtoCountryStrucuture;
+};
+
 export function countriesReducer(
-  state: ProtoCountryStrucuture[],
+  state: countryState,
   action: CountryActions
-): ProtoCountryStrucuture[] {
+): countryState {
   switch (action.type) {
     case countriesActions.load:
-      return action.payload as ProtoCountryStrucuture[];
+      const loadCountries = action.payload as ProtoCountryStrucuture[];
+      return { ...state, countries: loadCountries };
+    case countriesActions.getByName:
+      const getName = action.payload as ProtoCountryStrucuture;
+      return { ...state, country: getName };
+    case countriesActions.getByRegion:
+      const loadByRegion = action.payload as ProtoCountryStrucuture[];
+      return { ...state, countries: loadByRegion };
     default:
       return state;
   }

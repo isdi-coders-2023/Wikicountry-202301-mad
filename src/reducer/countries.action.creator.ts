@@ -18,3 +18,21 @@ export const loadCountryCreator = (
     payload,
   };
 };
+
+export const getCountryByNameCreator = (
+  payload: ProtoCountryStrucuture
+): CountryActions => {
+  return {
+    type: countriesActions.getByName,
+    payload,
+  };
+};
+
+export const getCountryByRegionCreator = (
+  payload: ProtoCountryStrucuture[]
+): CountryActions => {
+  return {
+    type: countriesActions.getByRegion,
+    payload,
+  };
+};
