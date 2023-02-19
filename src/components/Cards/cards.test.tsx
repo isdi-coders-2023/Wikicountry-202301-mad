@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable testing-library/no-unnecessary-act */
 /* eslint-disable testing-library/no-render-in-setup */
-import { act, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { WorldContext } from "../../context/app.context";
 import { UseWorldStructure } from "../../hook/use.world";
 import { Cards } from "./cards";
@@ -17,19 +18,34 @@ const mockContext = {
 } as unknown as UseWorldStructure;
 
 describe("Given Cards component", () => {
+  let elements: HTMLElement[];
+  beforeEach(async () => {
+    await act(async () =>
+      render(
+        <WorldContext.Provider value={mockContext}>
+          <Cards></Cards>
+        </WorldContext.Provider>
+      )
+    );
+    elements = screen.getAllByRole("button");
+  });
   describe("When it renders", () => {
-    beforeEach(async () => {
-      await act(async () =>
-        render(
-          <WorldContext.Provider value={mockContext}>
-            <Cards></Cards>
-          </WorldContext.Provider>
-        )
-      );
-    });
-    test("Then it should call the card component", async () => {
+    test("Then it should render the list role", async () => {
       const element = screen.getByRole("list");
       expect(element).toBeInTheDocument();
+    });
+  });
+  describe("When you use the buttons", () => {
+    test("Then you expect the prev button to be disable at first", () => {
+      expect(elements[0]).toBeDisabled();
+    });
+    test("Then it should detect the previous button", () => {
+      fireEvent.click(elements[0]);
+      expect(elements[0].contains).toHaveClass("cards-nav__button");
+    });
+    test("Then it should detect the next button", () => {
+      fireEvent.click(elements[1]);
+      expect(elements[1].contains).toHaveClass("cards-nav__button");
     });
   });
 });
