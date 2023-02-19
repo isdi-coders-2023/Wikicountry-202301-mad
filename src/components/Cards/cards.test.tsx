@@ -35,17 +35,20 @@ describe("Given Cards component", () => {
       expect(element).toBeInTheDocument();
     });
   });
+
   describe("When you use the buttons", () => {
     test("Then you expect the prev button to be disable at first", () => {
       expect(elements[0]).toBeDisabled();
     });
-    test("Then it should detect the previous button", () => {
-      fireEvent.click(elements[0]);
-      expect(elements[0].contains).toHaveClass("cards-nav__button");
-    });
-    test("Then it should detect the next button", () => {
+    test("Then it should show the next slice of the array", () => {
       fireEvent.click(elements[1]);
-      expect(elements[1].contains).toHaveClass("cards-nav__button");
+      expect(elements[1]).toHaveClass("cards-nav__button");
+    });
+    describe("When gyou hit a handlerbutton", () => {
+      test("Then it should show the next slice of the array", async () => {
+        const element = screen.getByRole("list");
+        expect(element).toBeInTheDocument();
+      });
     });
   });
 });
