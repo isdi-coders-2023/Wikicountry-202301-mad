@@ -1,7 +1,21 @@
-# WikycountrY
+# WikicountrY
 
-Web de consulta de países e información relativa a ellos.
+![Logo wikicountry](./images/logo2.svg)
 
-## Settings
+## Wikicountry
 
-- Dropdown and search to look for the countries
+App Wikicountry responsive (mobile + desktop).
+
+https://wikicountry-isdi.netlify.app/
+
+API pública : https://restcountries.com/
+
+    Detail
+
+    Favoritos
+
+    Home
+
+    Página no encontrada
+
+Filtrado por país y continente
