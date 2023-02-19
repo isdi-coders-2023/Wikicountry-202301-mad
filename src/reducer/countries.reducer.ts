@@ -15,19 +15,19 @@ export type countryState = {
 };
 
 export function countriesReducer(
-  state: ProtoCountryStrucuture[] | ProtoCountryStrucuture,
+  state: countryState,
   action: CountryActions
-): ProtoCountryStrucuture[] | ProtoCountryStrucuture {
+): countryState {
   switch (action.type) {
     case countriesActions.load:
       const loadCountries = action.payload as ProtoCountryStrucuture[];
-      return loadCountries;
+      return { ...state, countries: loadCountries };
     case countriesActions.getByName:
       const getName = action.payload as ProtoCountryStrucuture;
-      return getName;
+      return { ...state, country: getName };
     case countriesActions.getByRegion:
       const loadByRegion = action.payload as ProtoCountryStrucuture[];
-      return loadByRegion;
+      return { ...state, countries: loadByRegion };
     default:
       return state;
   }
