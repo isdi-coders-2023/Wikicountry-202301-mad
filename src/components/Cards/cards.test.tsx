@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable testing-library/no-unnecessary-act */
 /* eslint-disable testing-library/no-render-in-setup */
 import { act, fireEvent, render, screen } from "@testing-library/react";
