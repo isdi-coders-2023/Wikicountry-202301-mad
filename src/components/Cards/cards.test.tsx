@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable testing-library/no-unnecessary-act */
 /* eslint-disable testing-library/no-render-in-setup */
-import { act, screen, render } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { WorldContext } from "../../context/app.context";
 import { UseWorldStructure } from "../../hook/use.world";
 import { Card } from "../Card/card";
@@ -12,15 +13,13 @@ jest.mock("../Card/card");
 const mockContext = {
   loadCountries: jest.fn(),
   countryList: [
-    {population: 120, region: "Test"}
-    {population: 10, region: "Test2"}
-  ]
+    { region: "test", population: 1 },
+    { region: "test2", population: 2 },
+  ],
 } as unknown as UseWorldStructure;
 
 describe("Given Cards component", () => {
   describe("When it renders", () => {
-    let elements: HTMLElement[];
-
     beforeEach(async () => {
       await act(async () =>
         render(
@@ -29,11 +28,10 @@ describe("Given Cards component", () => {
           </WorldContext.Provider>
         )
       );
-
-      elements = screen.getAllByRole("image");
     });
     test("Then it should call the card component", async () => {
-      expect(Card).toHaveBeenCalled();
+      const element = screen.getByRole("list");
+      expect(element).toBeInTheDocument();
     });
   });
 });

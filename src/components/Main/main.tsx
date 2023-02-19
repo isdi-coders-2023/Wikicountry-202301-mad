@@ -3,7 +3,7 @@ import "./main.css";
 
 export function Main() {
   return (
-    <section className="main">
+    <section role="main" className="main">
       <div className="main-top">
         <form action="" method="get" className="main-search">
           <div className="main-search__input">

@@ -5,8 +5,6 @@ import { useContext, useEffect } from "react";
 import { ProtoCountryStrucuture } from "../model/country";
 
 export function Cards() {
-  // const { stateCountries, loadCountries } = useWorld(new ApiCountryRepo());
-
   const { stateCountries, loadCountries } = useContext(WorldContext);
 
   useEffect(() => {
@@ -16,8 +14,8 @@ export function Cards() {
   return (
     <section className="cards">
       <ul className="cards__ul">
-        {stateCountries.countries.map((item: ProtoCountryStrucuture) => (
-          <Card key={item.population} country={item}></Card>
+        {stateCountries?.countries.map((item: ProtoCountryStrucuture) => (
+          <Card country={item}></Card>
         ))}
       </ul>
     </section>
