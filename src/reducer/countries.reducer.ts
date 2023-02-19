@@ -11,23 +11,23 @@ import { countriesActions } from "./countries.actions";
 
 export type countryState = {
   countries: ProtoCountryStrucuture[];
-  country?: ProtoCountryStrucuture;
+  country: ProtoCountryStrucuture;
 };
 
 export function countriesReducer(
-  state: countryState,
+  state: ProtoCountryStrucuture[] | ProtoCountryStrucuture,
   action: CountryActions
-): countryState {
+): ProtoCountryStrucuture[] | ProtoCountryStrucuture {
   switch (action.type) {
     case countriesActions.load:
       const loadCountries = action.payload as ProtoCountryStrucuture[];
-      return { ...state, countries: loadCountries };
+      return loadCountries;
     case countriesActions.getByName:
       const getName = action.payload as ProtoCountryStrucuture;
-      return { ...state, country: getName };
+      return getName;
     case countriesActions.getByRegion:
       const loadByRegion = action.payload as ProtoCountryStrucuture[];
-      return { ...state, countries: loadByRegion };
+      return loadByRegion;
     default:
       return state;
   }

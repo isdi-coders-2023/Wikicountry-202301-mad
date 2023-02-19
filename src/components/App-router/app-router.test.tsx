@@ -25,7 +25,6 @@ describe("Given AppRouter component", () => {
         <AppRouter menuOptions={mockOptions}></AppRouter>
       </Router>
     );
-    count++;
   });
 
   describe("When the route is main", () => {
