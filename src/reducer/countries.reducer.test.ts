@@ -1,5 +1,5 @@
 import { ProtoCountryStrucuture } from "../components/model/country";
-import { CountryActions, loadCountryCreator } from "./countries.action.creator";
+import { CountryActions } from "./countries.action.creator";
 import { countriesActions } from "./countries.actions";
 import { countriesReducer, countryState } from "./countries.reducer";
 
@@ -16,17 +16,6 @@ const countriesMock: countryState = {
     population: 2,
     region: "i",
   },
-};
-const countryMock: ProtoCountryStrucuture = {
-  capital: ["Madrid"],
-  coatOfArms: { png: "f", svg: "f" },
-  currencies: { USD: { name: "dolar" } },
-  flags: { alt: "flag.img", png: "flag.img", svg: "flag.img" },
-  languages: { english: "jhk" },
-  maps: { googleMaps: "flag.img" },
-  name: { common: "flag.img", official: "flag.img" },
-  population: 2,
-  region: "i",
 };
 
 describe("Given the reducer function", () => {
