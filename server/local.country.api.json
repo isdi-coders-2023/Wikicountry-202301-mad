@@ -5,23 +5,46 @@
       "capital": "Mad Tea place",
       "region": "Europa",
       "coatOfArms": {
-        "png": "string",
+        "png": "../public/images/coatofarm-alicia.png",
         "svg": "string"
       },
       "currencies": "Red Roses",
 
       "flags": {
-        "alt?": "string",
-        "png": "string",
+        "alt?": "flag with a big rose",
+        "png": "../public/images/aliciaflag.png",
         "svg": "string"
       },
       "languages": "Español",
 
       "maps": "string",
 
-      "name": "Alicia´s World",
+      "name": "Alicias World",
 
       "population": 1257,
+      "comentarios": "string"
+    },
+    {
+      "id": 1,
+      "capital": "Coruscant",
+      "region": "Europa",
+      "coatOfArms": {
+        "png": "../public/images/coatofarmcoruscant.png",
+        "svg": "string"
+      },
+      "currencies": "Crédito",
+      "flags": {
+        "alt?": "Imperial Red flag",
+        "png": "../public/images/coruscantflag.png",
+        "svg": "string"
+      },
+      "languages": "Español",
+
+      "maps": "string",
+
+      "name": "Republica Galactica",
+
+      "population": 10000000,
       "comentarios": "string"
     }
   ]
