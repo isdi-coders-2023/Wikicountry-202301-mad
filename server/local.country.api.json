@@ -1,0 +1,28 @@
+{
+  "newcountry": [
+    {
+      "id": 1,
+      "capital": "Mad Tea place",
+      "region": "Europa",
+      "coatOfArms": {
+        "png": "string",
+        "svg": "string"
+      },
+      "currencies": "Red Roses",
+
+      "flags": {
+        "alt?": "string",
+        "png": "string",
+        "svg": "string"
+      },
+      "languages": "Español",
+
+      "maps": "string",
+
+      "name": "Alicia´s World",
+
+      "population": 1257,
+      "comentarios": "string"
+    }
+  ]
+}
