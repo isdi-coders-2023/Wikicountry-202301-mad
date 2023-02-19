@@ -11,3 +11,20 @@
   justify-items: center;
   row-gap: 2rem;
 }
+
+.cards-nav {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cards-nav__button {
+  border-radius: 0.2rem;
+  border: 0px;
+  height: 2.7rem;
+}
+.cards-nav__button img {
+  margin-top: 0.2rem;
+  width: 2rem;
+}
