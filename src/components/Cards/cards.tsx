@@ -8,14 +8,13 @@ export function Cards() {
   const buttonPrev = "./images/button-prev.png";
   const buttonNext = "./images/button-next.png";
 
-  const { stateCountries, loadCountries } = useContext(WorldContext);
-  const [firstNum, setFirstNum] = useState(0);
-  const [secondNum, setSecondNum] = useState(10);
-
-  const handlerPrevNextButton = (num: number) => {
-    setSecondNum(secondNum + num);
-    setFirstNum(firstNum + num);
-  };
+  const {
+    stateCountries,
+    loadCountries,
+    handlerPrevNextButton,
+    firstNum,
+    secondNum,
+  } = useContext(WorldContext);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -26,6 +25,7 @@ export function Cards() {
 
   useEffect(() => {
     loadCountries();
+    console.log(stateCountries.countries);
   }, [loadCountries]);
 
   return (
@@ -50,9 +50,10 @@ export function Cards() {
         </button>
         <button
           className="cards-nav__button"
-          disabled={secondNum === 250 ? true : false}
+          disabled={secondNum >= stateCountries.countries.length ? true : false}
           onClick={() => {
             handlerPrevNextButton(10);
+            scrollToTop();
           }}
         >
           <img src={buttonNext} alt="Next Page" />

@@ -1,5 +1,5 @@
 import { ApiCountryRepo } from "../services/api.country.repo";
-import { useCallback, useReducer } from "react";
+import { useCallback, useReducer, useState } from "react";
 import { ProtoCountryStrucuture } from "../components/model/country";
 import { countriesReducer, countryState } from "../reducer/countries.reducer";
 import * as ac from "../reducer/countries.action.creator";
@@ -9,6 +9,13 @@ export function useWorld(repo: ApiCountryRepo) {
   const initialState: countryState = {
     countries: [],
     country: {} as ProtoCountryStrucuture,
+  };
+
+  const [firstNum, setFirstNum] = useState(0);
+  const [secondNum, setSecondNum] = useState(10);
+  const handlerPrevNextButton = (num: number) => {
+    setSecondNum(secondNum + num);
+    setFirstNum(firstNum + num);
   };
 
   const [stateCountries, dispatch] = useReducer(countriesReducer, initialState);
@@ -51,5 +58,10 @@ export function useWorld(repo: ApiCountryRepo) {
     loadCountries,
     getCountryByName,
     getCountryByRegion,
+    handlerPrevNextButton,
+    firstNum,
+    secondNum,
+    setFirstNum,
+    setSecondNum,
   };
 }
