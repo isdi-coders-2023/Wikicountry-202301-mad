@@ -5,13 +5,8 @@ import "./main.css";
 
 export function Main() {
   const [continent, setContinent] = useState("");
-  const {
-    loadCountries,
-    getCountryByRegion,
-    firstNum,
-    setFirstNum,
-    setSecondNum,
-  } = useContext(WorldContext);
+  const { loadCountries, getCountryByRegion, setFirstNum, setSecondNum } =
+    useContext(WorldContext);
 
   return (
     <section role="main" className="main">

@@ -1,7 +1,7 @@
 import "./cards.css";
 import { Card } from "../Card/card";
 import { WorldContext } from "../../context/app.context";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { ProtoCountryStrucuture } from "../model/country";
 
 export function Cards() {
