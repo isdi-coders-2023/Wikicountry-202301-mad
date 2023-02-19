@@ -1,6 +1,6 @@
 # WikicountrY
 
-![Logo wikicountry](./images/logo2.svg)
+![Logo Wikicountry](https://github.com/isdi-coders-2023/Wikicountry-202301-mad/blob/main/public/images/logo-wikicountry-small.png)
 
 ## Wikicountry
 
