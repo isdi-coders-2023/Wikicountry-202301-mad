@@ -7,7 +7,6 @@ type MenuProps = {
 };
 export function MenuButton({ options }: MenuProps) {
   const location = useLocation();
-  console.log(location.pathname);
   const home = "./images/img-home.png";
   const fav = "./images/img-fav.png";
 
