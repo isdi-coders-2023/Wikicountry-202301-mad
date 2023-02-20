@@ -13,13 +13,7 @@ function Details() {
 
   useEffect(() => {
     getCountryByName(contextCountry?.name.common);
-    // console.log(contextCountry?.name);
-    // const loadCountry = async () => {
-    //   const country = await getCountryByName(contextCountry?.name.common);
-    //   console.log(country);
-    // };
-    // loadCountry();
-  }, [countryName]);
+  }, [contextCountry?.name.common, countryName, getCountryByName]);
 
   return (
     <section className="details">
