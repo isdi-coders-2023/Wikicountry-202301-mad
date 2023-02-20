@@ -22,10 +22,11 @@
       "name": "Alicias World",
 
       "population": 1257,
-      "comentarios": "string"
+      "comentarios": "string",
+      "isfavorite": true
     },
     {
-      "id": 1,
+      "id": 2,
       "capital": "Coruscant",
       "region": "Europa",
       "coatOfArms": {
@@ -45,7 +46,8 @@
       "name": "Republica Galactica",
 
       "population": 10000000,
-      "comentarios": "string"
+      "comentarios": "string",
+      "isfavorite": false
     }
   ]
 }
