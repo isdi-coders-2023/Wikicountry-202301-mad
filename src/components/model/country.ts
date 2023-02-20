@@ -1,12 +1,10 @@
 export type ProtoCountryStrucuture = {
   capital: string[];
   region: string;
-  coatOfArms:
-    | {
-        png: string;
-        svg: string;
-      }
-    | {};
+  coatOfArms: {
+    png: string;
+    svg: string;
+  };
   currencies: {
     [key: string]: {
       name: string;
@@ -18,14 +16,14 @@ export type ProtoCountryStrucuture = {
     svg: string;
   };
   languages: {
-    [key: string]: string;
+    [key: string]: any;
   };
   maps: {
     googleMaps: string;
   };
-  name: {
-    common: string;
-    official: string;
-  };
+  name: countryName;
   population: number;
+};
+export type countryName = {
+  [key: string]: any;
 };

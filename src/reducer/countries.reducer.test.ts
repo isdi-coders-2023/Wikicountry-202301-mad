@@ -9,7 +9,7 @@ const countriesMock: countryState = {
     coatOfArms: { png: "f", svg: "f" },
     currencies: { USD: { name: "dolar" } },
     flags: { alt: "flag.img", png: "flag.img", svg: "flag.img" },
-    languages: { english: "jhk" },
+    languages: { lang: "jhk" },
     maps: { googleMaps: "flag.img" },
     name: { common: "flag.img", official: "flag.img" },
     population: 2,
